@@ -1,11 +1,12 @@
 let aimDay = new Date(2025, 0, 1);
+const TextDay = new Date(2025,0,22,4,15,0);
 import { mySpark } from './script.js';
 var isSpring = false;
 var isClick = false;
 var runonce = 1;
 
         function setSpringFes() {
-            aimDay = new Date(2025, 0, 22, 3, 45, 0);
+            aimDay = new Date(2025, 0, 22, 4, 15, 0);
             const title = document.querySelector("h1");
             title.textContent = "春节倒计时";
         }
@@ -33,6 +34,8 @@ var runonce = 1;
                 if(dt == 0){
                     isSpring = true;
                 }
+                if(now - TextDay >= 0)
+                    isSpring = true;
                 if (dt <= 0) { setSpringFes(); return; }
                 flipAllCards(dt);
             }
